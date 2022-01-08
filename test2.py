@@ -23,7 +23,7 @@ element = browser.find_element(by=By.XPATH, value='//*[@id="form-container"]/div
 element.clear()
 element.send_keys(choice)
 browser.close()
-
+# 一度formsを閉じる
 # プロファイルフォルダを指定してChromeDriverを立ち上げる
 options = Options()
 PROFILE_PATH = r'C:\Users\81702\AppData\Local\Google\Chrome\User Data'  # プロフィールPATHを指定
