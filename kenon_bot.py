@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 import random
 import smtplib
 from email.mime.text import MIMEText
-from email.utils import formatdate
+import datetime
 
 # プロファイルフォルダを指定してChromeDriverを立ち上げる
 options = Options()
@@ -41,5 +41,31 @@ element = browser.find_element(by=By.XPATH, value='//*[@id="form-container"]/div
 element.click()
 time.sleep(5)
 
-print("finished")
+# 送信完了のemailをgmailに送信する
+# SMTP認証情報
+account = "bus687069@gmail.com"
+password = "sabaccount"
+# 送受信先
+to_email = "bus687069@gmail.com"
+from_email = "heshuxinjing@gmail.com"
+# MIMEの作成
+dt_now = datetime.datetime.now()
+subject = '検温の送信完了'
+message = '検温の送信完了' + "\n" + "送信時の時刻" + str(dt_now)
+msg = MIMEText(message, 'html')
+msg["subject"] = subject
+msg["To"] = to_email
+msg["From"] = from_email
+# メール送信処理
+server = smtplib.SMTP("smtp.gmail.com", 587)
+server.starttls()
+server.login(account, password)
+server.send_message(msg)
+server.quit()
+print("メールの送信完了")
+print("以下mailの内容")
+print("--------------------------------------")
+print(message)
+
+print("検温の送信+確認用メッセージの送信完了")
 
