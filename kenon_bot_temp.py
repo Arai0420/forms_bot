@@ -43,11 +43,11 @@ time.sleep(5)
 
 # 送信完了のemailをgmailに送信する
 # SMTP認証情報
-account = "bus687069@gmail.com"
-password = "sabaccount"
+account =
+password =
 # 送受信先
-to_email = "bus687069@gmail.com"
-from_email = "heshuxinjing@gmail.com"
+to_email =
+from_email =
 # MIMEの作成
 dt_now = datetime.datetime.now()
 subject = '検温の送信完了'
