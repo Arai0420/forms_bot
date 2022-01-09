@@ -11,10 +11,11 @@ import datetime
 
 # プロファイルフォルダを指定してChromeDriverを立ち上げる
 options = Options()
-PROFILE_PATH = r'C:\Users\81702\AppData\Local\Google\Chrome\User Data'  # プロフィールPATHを指定
+PROFILE_PATH = r'〇〇〇'  # プロフィールPATHを指定 # chromeでchrome://version/と検索→プロフィールパスを入力(末尾は/User Data)
 options.add_argument('--user-data-dir=' + PROFILE_PATH)
 chrome_service = fs.Service(executable_path="C:\\forms_bot\\chromedriver.exe")
 browser = webdriver.Chrome(service=chrome_service, options=options)
+# 検温のformsのURLを取得
 browser.get('https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyFZpkCmlsENDub1gWZtOw_tUOFNOWVRCVjg3QkpKVlBYTlpNRUxCTFZORS4u')
 browser.switch_to.default_content()
 time.sleep(7)
@@ -43,11 +44,11 @@ time.sleep(5)
 
 # 送信完了のemailをgmailに送信する
 # SMTP認証情報
-account =
-password =
+account = "gmailのアカウント(サブ垢推奨)"
+password = "上のアカウントのパスワード"
 # 送受信先
-to_email =
-from_email =
+to_email = "送信先のメルアド(=account)"
+from_email = "送信元のメルアド(本アカでおｋ)"
 # MIMEの作成
 dt_now = datetime.datetime.now()
 subject = '検温の送信完了'
