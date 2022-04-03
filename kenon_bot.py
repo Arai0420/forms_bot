@@ -13,7 +13,7 @@ import datetime
 options = Options()
 PROFILE_PATH = r'C:\Users\81702\AppData\Local\Google\Chrome\User Data'  # プロフィールPATHを指定
 options.add_argument('--user-data-dir=' + PROFILE_PATH)
-chrome_service = fs.Service(executable_path="C:\\forms_bot\\chromedriver.exe")
+chrome_service = fs.Service(executable_path=r"C:\forms_bot\chromedriver_ver100.exe")
 browser = webdriver.Chrome(service=chrome_service, options=options)
 browser.get('https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyFZpkCmlsENDub1gWZtOw_tUOFNOWVRCVjg3QkpKVlBYTlpNRUxCTFZORS4u')
 browser.switch_to.default_content()
@@ -27,11 +27,13 @@ element.clear()
 element.send_keys(choice)
 browser.close()
 # 一度formsを閉じる
+
+print("!")
 # プロファイルフォルダを指定してChromeDriverを立ち上げる
 options = Options()
 PROFILE_PATH = r'C:\Users\81702\AppData\Local\Google\Chrome\User Data'  # プロフィールPATHを指定
 options.add_argument('--user-data-dir=' + PROFILE_PATH)
-chrome_service = fs.Service(executable_path="C:\\forms_bot\\chromedriver.exe")
+chrome_service = fs.Service(executable_path=r"C:\forms_bot\chromedriver_ver100.exe")
 browser = webdriver.Chrome(service=chrome_service, options=options)
 browser.get('https://forms.office.com/Pages/ResponsePage.aspx?id=XYP-cpVeEkWK4KezivJfyFZpkCmlsENDub1gWZtOw_tUOFNOWVRCVjg3QkpKVlBYTlpNRUxCTFZORS4u')
 browser.switch_to.default_content()
@@ -39,7 +41,6 @@ time.sleep(7)
 # 送信
 element = browser.find_element(by=By.XPATH, value='//*[@id="form-container"]/div/div/div[1]/div/div[1]/div[2]/div[3]/div[1]/button/div')
 element.click()
-time.sleep(5)
 
 # 送信完了のemailをgmailに送信する
 # SMTP認証情報
