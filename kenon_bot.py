@@ -70,3 +70,10 @@ print(message)
 print("--------------------------------------")
 
 print("検温の送信+確認用メッセージの送信完了")
+
+#  errorへの対処 ---------------------------------------------------------------------------------------------------------
+#  DevTools listening on  ws://127.0.0.1:59068/devtools/browser/9d31bb09-cb61-45e0-9c8c-1bb0b8492f70
+#  ->  chromdriverバージョンとchromバージョンが違うから
+#  参考)https://blog.naver.com/PostView.nhn?blogId=kiddwannabe&logNo=221539689821&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+#  gmailが送信できない
+#  -> 参考)https://www.gocca.work/python-mailerror/
