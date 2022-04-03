@@ -76,4 +76,6 @@ print("検温の送信+確認用メッセージの送信完了")
 #  ->  chromdriverバージョンとchromバージョンが違うから
 #  参考)https://blog.naver.com/PostView.nhn?blogId=kiddwannabe&logNo=221539689821&categoryNo=0&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
 #  gmailが送信できない
+#  smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials g15-20020a056a0023cf00b004e17e11
+# cb17sm9182180pfc.111 - gsmtp')
 #  -> 参考)https://www.gocca.work/python-mailerror/
